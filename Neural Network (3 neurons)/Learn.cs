@@ -27,13 +27,6 @@ namespace Neural_Network__3_neurons_
             return y;
         }
 
-        double ErrorFunction(double Yexpected, double x1, double x2)
-        {
-            double Error = Math.Pow((ForwardPropagation(x1, x2) - Yexpected), 2);
-
-            return Error;
-        }
-
         void UpdateWeights(double Yexpected, double x1, double x2, double learningRate)
         {
             w000 = w000 - learningRate * (2 * (ForwardPropagation(x1, x2) - Yexpected) * Math.Pow(ForwardPropagation(x1, x2), 2) * Math.Exp(ExitNeuronSum(x1, x2)) * w10 * x1);
